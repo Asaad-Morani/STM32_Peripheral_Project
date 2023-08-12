@@ -1,3 +1,8 @@
+/**
+ * @file main_Inner_System.c
+ * @brief This file contains implementations for the main Inner System functionality.
+ */
+
 #include "main_Inner_System.h"
 #include "uart.h"
 #include "i2c.h"
@@ -22,12 +27,20 @@ ip_addr_t dest_ipaddr = {0};
 u16_t dest_port = 0;
 u16_t incomming_len = 0;
 
-void main_inner() {
+/**
+ * @brief Main Inner System function.
+ *
+ * This function initializes the UDP server, listens for incoming packets, and
+ * processes them. It handles the reception of bytes from the network interface,
+ * checks timeout expiration, and processes incoming UDP packets. Depending on
+ * the received message number, it performs UART, I2C, or SPI tests.
+ */
+void main_inner_sys() {
 	printf("Server is listening ... \r\n");
-	udpServer_init();					//UDP server initialization
+	udpServer_init();					/** UDP server initialization */
 	while (1) {
-		ethernetif_input(&gnetif);		//Handles the actual reception of bytes from the network interface
-		sys_check_timeouts();			//Handle which checks timeout expiration
+		ethernetif_input(&gnetif);		/** Handles the actual reception of bytes from the network interface */
+		sys_check_timeouts();			/** Handle which checks timeout expiration */
 		if(callback_flag == 1)
 		{
             printf("number is : %d \r\n", incoming_message.number);
