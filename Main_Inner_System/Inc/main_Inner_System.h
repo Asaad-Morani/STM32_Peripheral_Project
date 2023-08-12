@@ -48,7 +48,7 @@ extern u16_t incomming_len;
 struct udp_pcb;                      			// Forward declaration of the udp_pcb structure
 
 // Define function prototypes
-void rtg_main();                        // Main function for the RTG program
+void main_inner();                        // Main function for the RTG program
 void udpServer_init();                  // Initialize the UDP server
 void udp_disconnect(struct udp_pcb*);   // Disconnect the UDP server
 err_t udp_send(struct udp_pcb *, struct pbuf *);  // Send a UDP packet

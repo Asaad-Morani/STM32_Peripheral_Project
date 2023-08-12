@@ -22,7 +22,7 @@ ip_addr_t dest_ipaddr = {0};
 u16_t dest_port = 0;
 u16_t incomming_len = 0;
 
-void rtg_main() {
+void main_inner() {
 	printf("Server is listening ... \r\n");
 	udpServer_init();					//UDP server initialization
 	while (1) {
