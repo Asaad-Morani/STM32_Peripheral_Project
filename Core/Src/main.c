@@ -128,7 +128,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  main_inner();
+  main_inner_sys();
   while (1)
   {
     /* USER CODE END WHILE */
