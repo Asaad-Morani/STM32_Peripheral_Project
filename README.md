@@ -29,6 +29,8 @@ it's written in C, and it runs over the Windows system.
                       MISO --> PE5
                       NSS  --> PE4
 
+<img src="stm32_Board.jpeg" alt="Alt text" title="Optional title">
+
 4. run the STM project, it will run also the server.
 5. run client code on Windows.
 6. select which peripheral to test: 
