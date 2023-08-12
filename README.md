@@ -3,14 +3,14 @@ STM32F756ZG is a server that receives a struct from the client PC using an ether
 The struct contains a test-ID integer the number of peripherals to test, and a string that send to the server. it's like an echo server that checks data transmission validation between UARTs, I2C, and SPI, using DMA.
 
 # Sever
-it's a udp server, located at Main_Inner_System/Src file.
+it's a UDP server, located at Main_Inner_System/Src file.
 
 # Client
-it's writen in C, and it run over Windows system.
+it's written in C, and it runs over the Windows system.
 
 # Run Project
-1. connect STM32F756ZG to a power (not USB to computer).
-2. connect STM32F756ZG to the PC using Ethernet cable.
+1. connect STM32F756ZG to power (not USB to computer).
+2. connect STM32F756ZG to the PC using an Ethernet cable.
 3. connect jumpers between UART1 and UART2 same as I2C, and SPI.
     - UART5 : TX --> PC12
               RX --> PD2
@@ -36,6 +36,10 @@ it's writen in C, and it run over Windows system.
     2) I2C
     3) SPI
 7. then insert an input string from a client, the message goes to the servers on an Ethernet connection to uart5 and then to uart7 back to uart1 (same as SPI and I2C), as an Echo server. this gives us an indication to check the validation of the peripherals.
+
+<img src="output_results.PNG" alt="Alt text" title="Optional title">
+
+
 _______________________________________________________________________________________________
 # Client Code
 
